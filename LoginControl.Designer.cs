@@ -54,7 +54,6 @@ namespace TicketBook
             this.label_username.Size = new System.Drawing.Size(101, 28);
             this.label_username.TabIndex = 1;
             this.label_username.Text = "用户名:";
-            this.label_username.Click += new System.EventHandler(this.label_username_Click);
             // 
             // label_password
             // 
@@ -93,6 +92,7 @@ namespace TicketBook
             this.button_login.TabIndex = 6;
             this.button_login.Text = "登录";
             this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // button_exit
             // 

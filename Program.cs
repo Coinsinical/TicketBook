@@ -16,7 +16,26 @@ namespace TicketBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            LoginControl loginControl = loginForm.Controls["form_container"].Controls["LoginControl"] as LoginControl;
+            if (loginControl != null)
+            {
+                if (loginControl.RoleChoice == 1)
+                {
+                    Application.Run(new AdminForm());
+                }
+                else if (loginControl.RoleChoice == 0)
+                {
+                    Application.Run(new UserForm());
+                }
+                else
+                {
+                    Application.Run(new UserForm());
+                }
+            }
+            
         }
     }
 }

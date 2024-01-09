@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using TicketBook.Properties;
 
 namespace TicketBook
 {
     public partial class LoginControl : UserControl
+
     {
+        public int RoleChoice { get; private set; }
+
         public LoginControl()
         {
             InitializeComponent();
@@ -33,8 +41,44 @@ namespace TicketBook
             }
         }
 
-        private void label_username_Click(object sender, EventArgs e)
+
+        private void button_login_Click(object sender, EventArgs e)
         {
+            DAO.BaseDAO sqlcont = new DAO.BaseDAO();
+            string username = textBox_username.Text.ToString();
+            string password = textBox_password.Text.ToString();
+            if (username != "" & password != "")
+            {
+                string cmd = "select * from Users where Username='" + username + "' and Password='" + password + "'";
+                SqlDataReader temdr = sqlcont.getsdr(cmd);
+                bool ifcom = temdr.Read();
+                if (ifcom)
+                {
+                    // 根据 RadioButton 决定要打开的新窗体
+                    if (radioButton_user.Checked)
+                    {
+                        RoleChoice = 0;
+                    }
+                    else if (radioButton_admin.Checked)
+                    {
+                        RoleChoice = 1;
+                    }
+
+                    // 关闭用户控件所在的窗体
+                    Form parentForm = this.ParentForm;
+                    if (parentForm != null)
+                    {
+                        parentForm.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("用户名或密码错误！");
+                }
+                sqlcont.conn_close();
+            }
+            else
+                MessageBox.Show("请填写用户名和密码！");
 
         }
     }
