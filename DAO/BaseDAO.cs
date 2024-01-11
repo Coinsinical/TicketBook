@@ -38,16 +38,6 @@ namespace TicketBook.DAO
             }
         }
 
-        //读取数据库
-        public SqlDataReader getsdr(string sqlstr)
-        {
-            getconn();
-            SqlCommand comm = conn.CreateCommand();
-            comm.CommandText = sqlstr;
-            SqlDataReader My_Reader = comm.ExecuteReader();
-            return My_Reader;
-        }
-
         //执行SQL操作
         public void dosqlcom(string sqlstr)
         {
@@ -58,15 +48,25 @@ namespace TicketBook.DAO
             conn_close();
         }
 
+        //读取数据库
+        public SqlDataReader getDataReader(string sqlstr)
+        {
+            getconn();
+            SqlCommand comm = conn.CreateCommand();
+            comm.CommandText = sqlstr;
+            SqlDataReader My_Reader = comm.ExecuteReader();
+            return My_Reader;
+        }
+
         //查询数据返回给DataSet
-        public DataSet getDs(string sqlstr, string tableName)
+        public DataSet getDataSet(string sqlstr)
         {
             getconn();
             SqlDataAdapter sqlda = new SqlDataAdapter(sqlstr, conn);
-            DataSet My_DataSet = new DataSet();
-            sqlda.Fill(My_DataSet, tableName);
+            DataSet dataSet = new DataSet();
+            sqlda.Fill(dataSet);
             conn_close();
-            return My_DataSet;
+            return dataSet;
         }
     }
 }

@@ -50,7 +50,7 @@ namespace TicketBook
             if (username != "" & password != "")
             {
                 string cmd = "select * from Users where Username='" + username + "' and Password='" + password + "'";
-                SqlDataReader temdr = sqlcont.getsdr(cmd);
+                SqlDataReader temdr = sqlcont.getDataReader(cmd);
                 bool ifcom = temdr.Read();
                 if (ifcom)
                 {

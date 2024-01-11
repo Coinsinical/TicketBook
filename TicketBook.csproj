@@ -61,6 +61,30 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\FilmAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\FilmAddForm.Designer.cs">
+      <DependentUpon>FilmAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\FilmManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\FilmManagerControl.Designer.cs">
+      <DependentUpon>FilmManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\HallManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\HallManagerControl.Designer.cs">
+      <DependentUpon>HallManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\UserManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\UserManagerControl.Designer.cs">
+      <DependentUpon>UserManagerControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
@@ -90,6 +114,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\FilmAddForm.resx">
+      <DependentUpon>FilmAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\FilmManagerControl.resx">
+      <DependentUpon>FilmManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\HallManagerControl.resx">
+      <DependentUpon>HallManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\UserManagerControl.resx">
+      <DependentUpon>UserManagerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -134,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
