@@ -204,6 +204,7 @@ namespace TicketBook.Views.Admin
             this.Controls.Add(this.textBox_moviename);
             this.Controls.Add(this.label_moviename);
             this.Name = "FilmAddForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FilmAddForm";
             this.ResumeLayout(false);
             this.PerformLayout();

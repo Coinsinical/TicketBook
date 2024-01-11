@@ -28,11 +28,12 @@ namespace TicketBook
                 }
                 else if (loginControl.RoleChoice == 0)
                 {
-                    Application.Run(new UserForm());
+                    // MessageBox.Show(loginControl.Userid.ToString());
+                    Application.Run(new UserForm(loginControl.Userid));
                 }
                 else
                 {
-                    Application.Run(new UserForm());
+                    Application.Run(new UserForm(loginControl.Userid));
                 }
             }
             

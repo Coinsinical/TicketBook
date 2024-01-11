@@ -8,15 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TicketBook.Controls.AdminControls;
+using TicketBook.Views.User;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TicketBook
 {
     public partial class UserForm : Form
     {
+        private int userid;
         public UserForm()
         {
             InitializeComponent();
+        }
+
+        public UserForm(int Userid)
+        {
+            InitializeComponent();
+            userid = Userid;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,21 +46,9 @@ namespace TicketBook
                 // 在这里使用 selectedNode 来访问选中的项的信息
                 string nodeName = selectedNode.Name; // 获取选中项的文本
 
-                if (nodeName == "UserManager")
+                if (nodeName == "FilmView")
                 {
-                    SetPanelForm(new UserManagerControl());
-                }
-                else if (nodeName == "FilmManager")
-                {
-                    SetPanelForm(new FilmManagerControl());
-                }
-                else if (nodeName == "HallManager")
-                {
-                    SetPanelForm(new HallManagerControl());
-                }
-                else if (nodeName == "ScreeningManager")
-                {
-                    SetPanelForm(new ScreeningManagerControl());
+                    SetPanelForm(new FilmViewControl(userid));
                 }
             }
         }

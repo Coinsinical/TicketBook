@@ -19,6 +19,7 @@ namespace TicketBook
 
     {
         public int RoleChoice { get; private set; }
+        public int Userid { get; private set; }
 
         public LoginControl()
         {
@@ -55,6 +56,13 @@ namespace TicketBook
                 if (ifcom)
                 {
                     // 根据 RadioButton 决定要打开的新窗体
+
+                    // 通过列名获取 UserId 列的索引
+                    int userIdIndex = temdr.GetOrdinal("UserId");
+
+                    // 从读取器中获取 UserId 列的整数值
+                    Userid = temdr.GetInt32(userIdIndex);
+                    // MessageBox.Show(Userid.ToString());
                     if (radioButton_user.Checked)
                     {
                         RoleChoice = 0;
