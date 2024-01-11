@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     <Compile Include="Views\Admin\HallManagerControl.Designer.cs">
       <DependentUpon>HallManagerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\ScreeningManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\ScreeningManagerControl.Designer.cs">
+      <DependentUpon>ScreeningManagerControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\UserManagerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,12 +98,6 @@
       <DependentUpon>UserManagerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\BaseDAO.cs" />
-    <Compile Include="UserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm.Designer.cs">
-      <DependentUpon>UserForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="RegisterControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,11 +133,11 @@
     <EmbeddedResource Include="Views\Admin\HallManagerControl.resx">
       <DependentUpon>HallManagerControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\ScreeningManagerControl.resx">
+      <DependentUpon>ScreeningManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\UserManagerControl.resx">
       <DependentUpon>UserManagerControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserForm.resx">
-      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>

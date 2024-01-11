@@ -50,6 +50,10 @@ namespace TicketBook
                 {
                     SetPanelForm(new HallManagerControl());
                 }
+                else if (nodeName == "ScreeningManager")
+                {
+                    SetPanelForm(new ScreeningManagerControl());
+                }
             }
         }
 
