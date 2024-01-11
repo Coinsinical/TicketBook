@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("用户管理");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("影厅管理");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("排片管理");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("影院管理", new System.Windows.Forms.TreeNode[] {
-            treeNode14,
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("电影管理");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("订单管理");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("用户管理");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("影厅管理");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("排片管理");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("影院管理", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("电影管理");
             this.treeView_admin_menu = new System.Windows.Forms.TreeView();
             this.button_change_user = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
@@ -48,23 +47,20 @@
             this.treeView_admin_menu.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.treeView_admin_menu.Location = new System.Drawing.Point(-2, -1);
             this.treeView_admin_menu.Name = "treeView_admin_menu";
-            treeNode13.Name = "UserManager";
-            treeNode13.Text = "用户管理";
-            treeNode14.Name = "HallManager";
-            treeNode14.Text = "影厅管理";
-            treeNode15.Name = "ScreeningManager";
-            treeNode15.Text = "排片管理";
-            treeNode16.Name = "CinemaManager";
-            treeNode16.Text = "影院管理";
-            treeNode17.Name = "FilmManager";
-            treeNode17.Text = "电影管理";
-            treeNode18.Name = "OrderManager";
-            treeNode18.Text = "订单管理";
+            treeNode1.Name = "UserManager";
+            treeNode1.Text = "用户管理";
+            treeNode2.Name = "HallManager";
+            treeNode2.Text = "影厅管理";
+            treeNode3.Name = "ScreeningManager";
+            treeNode3.Text = "排片管理";
+            treeNode4.Name = "CinemaManager";
+            treeNode4.Text = "影院管理";
+            treeNode5.Name = "FilmManager";
+            treeNode5.Text = "电影管理";
             this.treeView_admin_menu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode16,
-            treeNode17,
-            treeNode18});
+            treeNode1,
+            treeNode4,
+            treeNode5});
             this.treeView_admin_menu.Size = new System.Drawing.Size(199, 717);
             this.treeView_admin_menu.TabIndex = 0;
             this.treeView_admin_menu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_admin_menu_AfterSelect);

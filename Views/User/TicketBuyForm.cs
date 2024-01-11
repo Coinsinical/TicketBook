@@ -58,21 +58,24 @@ namespace TicketBook.Views.User
             // 清空现有座位信息
             listView_seats.Items.Clear();
             // 使用合适的 SQL 查询获取座位信息
-            string query = "SELECT SeatNum, Status FROM Seats WHERE ScreeningID = " + screeningID;
+            string query = "SELECT SeatNum, Status, SeatID FROM Seats WHERE ScreeningID = " + screeningID;
             SqlDataReader reader = baseDAO.getDataReader(query);
             while (reader.Read())
             {
                 string seatNum = reader["SeatNum"].ToString();
                 string status = reader["Status"].ToString();
+                string seatID = reader["SeatID"].ToString();
 
                 // 添加座位信息到 ListView
                 ListViewItem item = new ListViewItem(seatNum);
                 item.SubItems.Add(status);
+                item.SubItems.Add(seatID);
 
                 // 根据座位状态设置 Checked 属性
                 if (status == "True")
                 {
                     item.Checked = true;  // 根据实际情况设置条件
+                    item.Selected = true;
                 }
 
                 listView_seats.Items.Add(item);
@@ -101,6 +104,7 @@ namespace TicketBook.Views.User
 
                 // 获取 status 列的文本
                 string status = item.SubItems[1].Text; // 假设 status 列是第二列
+                String seatID = item.SubItems[2].Text; 
 
                 // 检查项是否被选中且 status 值满足条件
                 if (item.Checked && status == "False")
@@ -108,6 +112,8 @@ namespace TicketBook.Views.User
                     // 将座位信息添加到 StringBuilder 中
                     selectedSeatsStringBuilder.Append(seatInfo);
                     ticket_num++;
+                    String sql = "UPDATE Seats SET Status = 1 WHERE SeatID = " + seatID;
+                    baseDAO.dosqlcom(sql);
 
                     // 如果有多个选中项，可以在座位信息之间添加分隔符
                     selectedSeatsStringBuilder.Append(", ");
@@ -156,6 +162,21 @@ namespace TicketBook.Views.User
         private void button_cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void listView_seats_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // 获取当前选中项
+            ListViewItem currentItem = listView_seats.Items[e.Index];
+
+            // 获取选中项的 "状态" SubItem 的值
+            string status = currentItem.SubItems[1].Text;
+
+            // 如果 "状态" 为特定值，阻止取消选中
+            if (status == "True" && e.NewValue == CheckState.Unchecked)
+            {
+                e.NewValue = e.CurrentValue;
+            }
         }
     }
 }

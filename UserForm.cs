@@ -50,6 +50,10 @@ namespace TicketBook
                 {
                     SetPanelForm(new FilmViewControl(userid));
                 }
+                else if (nodeName == "OrderView")
+                {
+                    SetPanelForm(new OrderViewControl(userid));
+                }
             }
         }
 

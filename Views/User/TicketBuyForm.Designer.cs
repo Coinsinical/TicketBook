@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "",
-            ""}, -1);
             this.label_screening = new System.Windows.Forms.Label();
             this.comboBox_screening = new System.Windows.Forms.ComboBox();
             this.listView_seats = new System.Windows.Forms.ListView();
@@ -61,16 +57,12 @@
             // 
             this.listView_seats.CheckBoxes = true;
             this.listView_seats.HideSelection = false;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            this.listView_seats.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
             this.listView_seats.Location = new System.Drawing.Point(118, 67);
             this.listView_seats.Name = "listView_seats";
             this.listView_seats.Size = new System.Drawing.Size(462, 345);
             this.listView_seats.TabIndex = 2;
             this.listView_seats.UseCompatibleStateImageBehavior = false;
+            this.listView_seats.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listView_seats_ItemCheck);
             // 
             // button_confirm
             // 

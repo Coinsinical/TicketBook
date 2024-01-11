@@ -118,6 +118,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\User\OrderViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\User\OrderViewControl.Designer.cs">
+      <DependentUpon>OrderViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\User\FilmViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +175,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\User\OrderViewControl.resx">
+      <DependentUpon>OrderViewControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\User\FilmViewControl.resx">
       <DependentUpon>FilmViewControl.cs</DependentUpon>
     </EmbeddedResource>

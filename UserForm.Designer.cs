@@ -44,7 +44,7 @@
             this.treeView_admin_menu.Name = "treeView_admin_menu";
             treeNode1.Name = "FilmView";
             treeNode1.Text = "电影列表";
-            treeNode2.Name = "OrderManager";
+            treeNode2.Name = "OrderView";
             treeNode2.Text = "订单管理";
             this.treeView_admin_menu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
